@@ -6,7 +6,7 @@
 
     <div class="carousel">
       <div class="card-1" v-show="currentCard === 0">
-        <div class="card-content">
+        <div class="card-content" :class="{ 'red-bg' : cardStatus[0] === 'Indisponível' }">
           <h1>
             {{ cardStatus[0] }}
           </h1>
@@ -17,7 +17,7 @@
       </div>
 
       <div class="card-2" v-show="currentCard === 1">
-        <div class="card-content">
+        <div class="card-content"  :class="{ 'red-bg' : cardStatus[1] === 'Indisponível' }">
           <h1>
             {{ cardStatus[1] }}
           </h1>
@@ -28,7 +28,7 @@
       </div>
 
       <div class="card-3" v-show="currentCard === 2">
-        <div class="card-content">
+        <div class="card-content"  :class="{ 'red-bg' : cardStatus[2] === 'Indisponível' }">
           <h1>
             {{ cardStatus[2] }}
           </h1>
@@ -121,11 +121,15 @@ name: 'HomePage',
   width: 340px;
   margin: 0 10px auto;
   padding: 20px;
-  background-color: #ff0000;
+  background-color: #00ff00;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center
+}
+
+.red-bg {
+  background-color: #ff0000;
 }
 
 h1 {
