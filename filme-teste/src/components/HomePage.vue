@@ -5,9 +5,37 @@
     </button>
 
     <div class="carousel">
-      <div class="card" v-for="card in cards" :key="card.id" :class="{ active: card.isActive }">
-        <h2>{{ card.title }}</h2>
-        <p>{{ card.description }}</p>
+      <div class="card-1" v-show="currentCard === 0">
+        <div class="card-content">
+          <h1>
+            {{ cardStatus[0] }}
+          </h1>
+          <div class="image">
+            <img src="../assets/aranha1.jpg" />
+          </div>
+        </div>
+      </div>
+
+      <div class="card-2" v-show="currentCard === 1">
+        <div class="card-content">
+          <h1>
+            {{ cardStatus[1] }}
+          </h1>
+          <div class="image">
+            <img src="../assets/avatar.jpg" />
+          </div>
+        </div>
+      </div>
+
+      <div class="card-3" v-show="currentCard === 2">
+        <div class="card-content">
+          <h1>
+            {{ cardStatus[2] }}
+          </h1>
+          <div class="image">
+            <img src="../assets/clube.jpg" />
+          </div>
+        </div>
       </div>
     </div>
 
@@ -19,35 +47,39 @@
 
 <script>
 export default {
+name: 'HomePage',
   data() {
     return {
-      cards: [
-        { id: 1, title: "Card 1", description: "Descrição do Card 1", isActive: true },
-        { id: 2, title: "Card 2", description: "Descrição do Card 2", isActive: false },
-        { id: 3, title: "Card 3", description: "Descrição do Card 3", isActive: false },
-      ],
       currentCard: 0,
+      cardStatus: ['Disponível', 'Disponível', 'Disponível']
     };
   },
+  created() {
+    setInterval(this.updateCardStatus,  60 * 1000); 
+  },
+
   methods: {
     prevCard() {
       if (this.currentCard > 0) {
         this.currentCard--;
-        this.updateActiveCards();
       }
     },
+
     nextCard() {
-      if (this.currentCard < this.cards.length - 1) {
+      if (this.currentCard < 2) {
         this.currentCard++;
-        this.updateActiveCards();
       }
     },
-    updateActiveCards() {
-      for (const card of this.cards) {
-        card.isActive = false;
+
+    updateCardStatus() {
+      for (let i = 0; i < this.cardStatus.length; i++) {
+        if (this.cardStatus[i] === 'Disponível') {
+          this.cardStatus[i] = 'Indisponível';
+        } else {
+          this.cardStatus[i] = 'Disponível';
+        }
       }
-      this.cards[this.currentCard].isActive = true;
-    },
+    }
   },
 };
 </script>
@@ -81,18 +113,51 @@ export default {
   transition: transform 0.5s ease-in-out;
 }
 
-.card {
+.card-content {
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: hidden;
   height: 600px;
-  width: 400px;
+  width: 340px;
   margin: 0 10px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #ff0000;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center
+}
+
+h1 {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.card-1,
+.card-2,
+.card-3 {
   display: none;
 }
 
-.active {
+.card-1,
+.card-2,
+.card-3 {
   display: block;
+}
+
+img {
+  margin: auto;
+  align-items: center;
+}
+
+.image {
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  margin-top: 80px;
+  position: relative;
 }
 </style>
