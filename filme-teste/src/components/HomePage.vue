@@ -24,6 +24,7 @@
               <li>20:00/Sala 6</li>
             </ul>
             </p>
+            <i class="fas fa-question"></i>
           </div>
         </div>
       </div>
@@ -131,16 +132,11 @@ export default {
 
 .prev-arrow,
 .next-arrow {
-  background-color: #ccc;
+  background-color: #ffffff;
+  border: none;
   padding: 10px;
-  border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
-}
-
-.prev-arrow:hover,
-.next-arrow:hover {
-  background-color: #aaa;
 }
 
 .carousel {
@@ -195,6 +191,17 @@ p {
   padding: 10px;
   margin: 0;
   background-color: #ffffff;
+}
+
+.fa-question {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin: 0;
+  text-align: right;
 }
 
 .card-1,
