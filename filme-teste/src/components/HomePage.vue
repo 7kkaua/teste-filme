@@ -6,34 +6,70 @@
 
     <div class="carousel">
       <div class="card-1" v-show="currentCard === 0">
-        <div class="card-content" :class="{ 'red-bg' : cardStatus[0] === 'Indisponível' }">
+        <div class="card-content" :class="{ 'red-bg': cardStatus[0] === 'Indisponível' }">
           <h1>
             {{ cardStatus[0] }}
           </h1>
           <div class="image">
             <img src="../assets/aranha1.jpg" />
           </div>
+          <div class="sub">
+            <h2>
+              Horários de exibição
+            </h2>
+            <p>
+            <ul>
+              <li>13:00/Sala 2</li>
+              <li>18:30/Sala 1</li>
+              <li>20:00/Sala 6</li>
+            </ul>
+            </p>
+          </div>
         </div>
       </div>
 
       <div class="card-2" v-show="currentCard === 1">
-        <div class="card-content"  :class="{ 'red-bg' : cardStatus[1] === 'Indisponível' }">
+        <div class="card-content" :class="{ 'red-bg': cardStatus[1] === 'Indisponível' }">
           <h1>
             {{ cardStatus[1] }}
           </h1>
           <div class="image">
             <img src="../assets/avatar.jpg" />
           </div>
+          <div class="sub">
+            <h2>
+              Horários de exibição
+            </h2>
+            <p>
+            <ul>
+              <li>13:00/Sala 2</li>
+              <li>18:30/Sala 1</li>
+              <li>20:00/Sala 6</li>
+            </ul>
+            </p>
+          </div>
         </div>
       </div>
 
       <div class="card-3" v-show="currentCard === 2">
-        <div class="card-content"  :class="{ 'red-bg' : cardStatus[2] === 'Indisponível' }">
+        <div class="card-content" :class="{ 'red-bg': cardStatus[2] === 'Indisponível' }">
           <h1>
             {{ cardStatus[2] }}
           </h1>
           <div class="image">
             <img src="../assets/clube.jpg" />
+          </div>
+          <div class="sub">
+            <h2>
+              Horários de exibição
+            </h2>
+            <p>
+            <ul>
+              <li>13:00/Sala 2</li>
+              <li>18:30/Sala 1</li>
+              <li>20:00/Sala 6</li>
+            </ul>
+            </p>
           </div>
         </div>
       </div>
@@ -47,7 +83,7 @@
 
 <script>
 export default {
-name: 'HomePage',
+  name: 'HomePage',
   data() {
     return {
       currentCard: 0,
@@ -55,7 +91,7 @@ name: 'HomePage',
     };
   },
   created() {
-    setInterval(this.updateCardStatus,  60 * 1000); 
+    setInterval(this.updateCardStatus, 60 * 1000);
   },
 
   methods: {
@@ -109,7 +145,6 @@ name: 'HomePage',
 
 .carousel {
   display: flex;
-  overflow-x: auto;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -117,7 +152,7 @@ name: 'HomePage',
   position: relative;
   overflow-y: hidden;
   overflow-x: hidden;
-  height: 600px;
+  height: 650px;
   width: 340px;
   margin: 0 10px auto;
   padding: 20px;
@@ -134,10 +169,32 @@ name: 'HomePage',
 
 h1 {
   position: absolute;
-  top: 20px;
+  top: 1px;
   left: 0;
   width: 100%;
   text-align: center;
+}
+
+h2 {
+  position: absolute;
+  z-index: 1;
+  bottom: 60px;
+  left: 0;
+  background-color: #ffffff;
+  text-align: center;
+  width: 100%;
+  height: 40px;
+}
+
+p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  margin: 0;
+  background-color: #ffffff;
 }
 
 .card-1,
@@ -161,7 +218,7 @@ img {
   align-items: center;
   margin: auto;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 25px;
   position: relative;
 }
 </style>
