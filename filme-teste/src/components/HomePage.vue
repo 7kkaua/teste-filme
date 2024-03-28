@@ -24,9 +24,31 @@
               <li>20:00/Sala 6</li>
             </ul>
             </p>
-            <i class="fas fa-question"></i>
+            <button @click="openModal()" class="fas fa-question" id="button1"></button>
           </div>
         </div>
+        <div class="modal" :class="{ 'is-active': showModal }">
+      <div class="modal-background"></div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              Deseja excluir essa anotação?
+            </h5>
+          </div>
+          <div class="modal-body">
+            <p>
+              Depois de se reunir com Gwen Stacy, Homem-Aranha é jogado no multiverso. Lá, o super-herói aracnídeo encontra uma numerosa equipe encarregada de proteger sua própria existência.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" @click="closeModal()">
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
       </div>
 
       <div class="card-2" v-show="currentCard === 1">
@@ -48,8 +70,31 @@
               <li>20:00/Sala 6</li>
             </ul>
             </p>
+            <button @click="startModal()" class="fas fa-question" id="button1"></button>
           </div>
         </div>
+        <div class="modal" :class="{ 'is-active': exposeModal }">
+      <div class="modal-background"></div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              Deseja excluir essa anotação?
+            </h5>
+          </div>
+          <div class="modal-body">
+            <p>
+              Após formar uma família, Jake Sully e Ney'tiri fazem de tudo para ficarem juntos. No entanto, eles devem sair de casa e explorar as regiões de Pandora quando uma antiga ameaça ressurge, e Jake deve travar uma guerra difícil contra os humanos.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" @click="endModal()">
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
       </div>
 
       <div class="card-3" v-show="currentCard === 2">
@@ -71,9 +116,32 @@
               <li>20:00/Sala 6</li>
             </ul>
             </p>
+            <button @click="joinModal()" class="fas fa-question" id="button1"></button>
           </div>
         </div>
       </div>
+      <div class="modal" :class="{ 'is-active': displayModal }">
+      <div class="modal-background"></div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              Deseja excluir essa anotação?
+            </h5>
+          </div>
+          <div class="modal-body">
+            <p>
+              Um homem deprimido que sofre de insônia conhece um estranho vendedor chamado Tyler Durden e se vê morando em uma casa suja depois que seu perfeito apartamento é destruído. A dupla forma um clube com regras rígidas onde homens lutam. A parceria perfeita é comprometida quando uma mulher, Marla, atrai a atenção de Tyler.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" @click="finishModal()">
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
 
     <button class="next-arrow" @click="nextCard">
@@ -88,7 +156,10 @@ export default {
   data() {
     return {
       currentCard: 0,
-      cardStatus: ['Disponível', 'Disponível', 'Disponível']
+      cardStatus: ['Disponível', 'Disponível', 'Disponível'],
+      showModal: false,
+      exposeModal: false,
+      displayModal: false
     };
   },
   created() {
@@ -116,6 +187,30 @@ export default {
           this.cardStatus[i] = 'Disponível';
         }
       }
+    },
+
+    openModal() {
+      this.showModal = true;
+    },
+
+    startModal() {
+      this.exposeModal = true;
+    },
+
+    joinModal() {
+      this.displayModal = true;
+    },
+
+    closeModal() {
+      this.showModal = false;
+    },
+
+    endModal() {
+      this.exposeModal = false;
+    },
+
+    finishModal() {
+      this.displayModal = false;
     }
   },
 };
@@ -193,15 +288,20 @@ p {
   background-color: #ffffff;
 }
 
-.fa-question {
+#button1 {
+  background-color: #ffffff;
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 40px;
-  padding: 10px;
-  margin: 0;
-  text-align: right;
+  bottom: 10px;
+  right: 10px;
+  justify-content: center;
+  border-radius: 100%;
+  margin: 0; 
+}
+
+.fas-question {
+  text-align: center;
+  position: relative;
+
 }
 
 .card-1,
@@ -228,4 +328,54 @@ img {
   margin-top: 25px;
   position: relative;
 }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: none;
+  margin: auto;
+}
+
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.modal-body {
+  text-align: left;
+}
+
+
+.modal-content {
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
+  display: flex;
+  margin: auto;
+}
+
+.btn-danger {
+  border-radius: 50px;
+}
+
+.btn-secondary {
+  border-radius: 50px;
+}
+
+.modal.is-active {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.79);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 </style>
