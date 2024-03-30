@@ -130,7 +130,7 @@
             </h5>
           </div>
           <div class="modal-body">
-            <p>
+            <p class="modal-text">
               Um homem deprimido que sofre de insônia conhece um estranho vendedor chamado Tyler Durden e se vê morando em uma casa suja depois que seu perfeito apartamento é destruído. A dupla forma um clube com regras rígidas onde homens lutam. A parceria perfeita é comprometida quando uma mulher, Marla, atrai a atenção de Tyler.
             </p>
           </div>
@@ -348,11 +348,14 @@ img {
   width: 100%;
 }
 
+.modal-text {
+  height: 155px;
+  border-radius: 10px;
+}
 
 .modal-body {
   text-align: left;
 }
-
 
 .modal-content {
   width: 100%;
@@ -360,10 +363,6 @@ img {
   border-radius: 9px;
   display: flex;
   margin: auto;
-}
-
-.btn-danger {
-  border-radius: 50px;
 }
 
 .btn-secondary {
