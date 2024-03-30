@@ -25,6 +25,7 @@
             </ul>
             </p>
             <button @click="openModal()" class="fas fa-question" id="button1"></button>
+            <button @click="openInfo()" class="fas fa-info" id="button2"></button>
           </div>
         </div>
         <div class="modal" :class="{ 'is-active': showModal }">
@@ -211,6 +212,10 @@ export default {
 
     finishModal() {
       this.displayModal = false;
+    },
+
+    openInfo() {
+      
     }
   },
 };
@@ -298,10 +303,25 @@ p {
   margin: 0; 
 }
 
+#button2 {
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
+  justify-content: center;
+  border-radius: 100%;
+  margin: 0;
+}
+
 .fas-question {
   text-align: center;
   position: relative;
 
+}
+
+.fas-info {
+  text-align: center;
+  position: relative;
 }
 
 .card-1,
