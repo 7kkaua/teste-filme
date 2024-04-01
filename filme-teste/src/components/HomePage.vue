@@ -28,13 +28,48 @@
             <button @click="openInfo()" class="fas fa-info" id="button2"></button>
           </div>
         </div>
+        <div class="modal" :class="{ 'is-active': demonstrateModal }">
+      <div class="modal-background"></div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              Regras da sala de cinema 
+            </h5>
+          </div>
+          <div class="modal-body">
+            <span>
+              <i class="fas fa-smoking-ban"></i>
+              Proibido fumar 
+            </span> <br>
+            <span>
+              <i class="fas fa-mobile-alt"></i>
+              Proibido uso de celular
+            </span> <br>
+            <span>
+              <i class="fas fa-volume-up"></i>
+              Proibido qualquer tipo de som alto
+            </span> <br>
+            <span>
+              <i class="fas fa-video"></i>
+              Proibido a gravação do filme
+            </span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" @click="sealModal()">
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
         <div class="modal" :class="{ 'is-active': showModal }">
       <div class="modal-background"></div>
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">
-              Deseja excluir essa anotação?
+              a
             </h5>
           </div>
           <div class="modal-body">
@@ -160,7 +195,8 @@ export default {
       cardStatus: ['Disponível', 'Disponível', 'Disponível'],
       showModal: false,
       exposeModal: false,
-      displayModal: false
+      displayModal: false,
+      demonstrateModal: false
     };
   },
   created() {
@@ -215,7 +251,11 @@ export default {
     },
 
     openInfo() {
-      
+      this.demonstrateModal = true;
+    },
+
+    sealModal() {
+      this.demonstrateModal = false;
     }
   },
 };
@@ -323,6 +363,8 @@ p {
   text-align: center;
   position: relative;
 }
+
+
 
 .card-1,
 .card-2,
