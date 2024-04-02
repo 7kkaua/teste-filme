@@ -107,7 +107,43 @@
             </ul>
             </p>
             <button @click="startModal()" class="fas fa-question" id="button1"></button>
+            <button @click="startInfo()" class="fas fa-info" id="button2"></button>
           </div>
+          <div class="modal" :class="{ 'is-active': depictModal }">
+      <div class="modal-background"></div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              Regras da sala de cinema 
+            </h5>
+          </div>
+          <div class="modal-body">
+            <span>
+              <i class="fas fa-smoking-ban"></i>
+              Proibido fumar 
+            </span> <br>
+            <span>
+              <i class="fas fa-mobile-alt"></i>
+              Proibido uso de celular
+            </span> <br>
+            <span>
+              <i class="fas fa-volume-up"></i>
+              Proibido qualquer tipo de som alto
+            </span> <br>
+            <span>
+              <i class="fas fa-video"></i>
+              Proibido a gravação do filme
+            </span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" @click="shutModal()">
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
         </div>
         <div class="modal" :class="{ 'is-active': exposeModal }">
       <div class="modal-background"></div>
@@ -153,7 +189,43 @@
             </ul>
             </p>
             <button @click="joinModal()" class="fas fa-question" id="button1"></button>
+            <button @click="joinInfo()" class="fas fa-info" id="button2"></button>
           </div>
+          <div class="modal" :class="{ 'is-active': illustrateModal }">
+      <div class="modal-background"></div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              Regras da sala de cinema 
+            </h5>
+          </div>
+          <div class="modal-body">
+            <span>
+              <i class="fas fa-smoking-ban"></i>
+              Proibido fumar 
+            </span> <br>
+            <span>
+              <i class="fas fa-mobile-alt"></i>
+              Proibido uso de celular
+            </span> <br>
+            <span>
+              <i class="fas fa-volume-up"></i>
+              Proibido qualquer tipo de som alto
+            </span> <br>
+            <span>
+              <i class="fas fa-video"></i>
+              Proibido a gravação do filme
+            </span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" @click="blockedModal()">
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
         </div>
       </div>
       <div class="modal" :class="{ 'is-active': displayModal }">
@@ -196,7 +268,9 @@ export default {
       showModal: false,
       exposeModal: false,
       displayModal: false,
-      demonstrateModal: false
+      demonstrateModal: false,
+      depictModal: false,
+      illustrateModal: false
     };
   },
   created() {
@@ -254,8 +328,24 @@ export default {
       this.demonstrateModal = true;
     },
 
+    startInfo() {
+      this.depictModal = true;
+    },
+
+    joinInfo() {
+      this.illustrateModal = true;
+    },
+
     sealModal() {
       this.demonstrateModal = false;
+    },
+
+    shutModal() {
+      this.depictModal = false;
+    },
+
+    blockedModal() {
+      this.illustrateModal = false;
     }
   },
 };
