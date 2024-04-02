@@ -29,62 +29,63 @@
           </div>
         </div>
         <div class="modal" :class="{ 'is-active': demonstrateModal }">
-      <div class="modal-background"></div>
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">
-              Regras da sala de cinema 
-            </h5>
-          </div>
-          <div class="modal-body">
-            <span>
-              <i class="fas fa-smoking-ban"></i>
-              Proibido fumar 
-            </span> <br>
-            <span>
-              <i class="fas fa-mobile-alt"></i>
-              Proibido uso de celular
-            </span> <br>
-            <span>
-              <i class="fas fa-volume-up"></i>
-              Proibido qualquer tipo de som alto
-            </span> <br>
-            <span>
-              <i class="fas fa-video"></i>
-              Proibido a gravação do filme
-            </span>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" @click="sealModal()">
-              Fechar
-            </button>
+          <div class="modal-background"></div>
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  Regras da sala de cinema
+                </h5>
+              </div>
+              <div class="modal-body">
+                <span>
+                  <i class="fas fa-smoking-ban"></i>
+                  Proibido fumar
+                </span> <br>
+                <span>
+                  <i class="fas fa-mobile-alt"></i>
+                  Proibido uso de celular
+                </span> <br>
+                <span>
+                  <i class="fas fa-volume-up"></i>
+                  Proibido qualquer tipo de som alto
+                </span> <br>
+                <span>
+                  <i class="fas fa-video"></i>
+                  Proibido a gravação do filme
+                </span>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" @click="sealModal()">
+                  Fechar
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
         <div class="modal" :class="{ 'is-active': showModal }">
-      <div class="modal-background"></div>
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">
-              a
-            </h5>
-          </div>
-          <div class="modal-body">
-            <p>
-              Depois de se reunir com Gwen Stacy, Homem-Aranha é jogado no multiverso. Lá, o super-herói aracnídeo encontra uma numerosa equipe encarregada de proteger sua própria existência.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" @click="closeModal()">
-              Fechar
-            </button>
+          <div class="modal-background"></div>
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  a
+                </h5>
+              </div>
+              <div class="modal-body">
+                <p>
+                  Depois de se reunir com Gwen Stacy, Homem-Aranha é jogado no multiverso. Lá, o super-herói aracnídeo
+                  encontra uma numerosa equipe encarregada de proteger sua própria existência.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" @click="closeModal()">
+                  Fechar
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
       </div>
 
       <div class="card-2" v-show="currentCard === 1">
@@ -110,63 +111,65 @@
             <button @click="startInfo()" class="fas fa-info" id="button2"></button>
           </div>
           <div class="modal" :class="{ 'is-active': depictModal }">
-      <div class="modal-background"></div>
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">
-              Regras da sala de cinema 
-            </h5>
+            <div class="modal-background"></div>
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">
+                    Regras da sala de cinema
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <span>
+                    <i class="fas fa-smoking-ban"></i>
+                    Proibido fumar
+                  </span> <br>
+                  <span>
+                    <i class="fas fa-mobile-alt"></i>
+                    Proibido uso de celular
+                  </span> <br>
+                  <span>
+                    <i class="fas fa-volume-up"></i>
+                    Proibido qualquer tipo de som alto
+                  </span> <br>
+                  <span>
+                    <i class="fas fa-video"></i>
+                    Proibido a gravação do filme
+                  </span>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" @click="shutModal()">
+                    Fechar
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="modal-body">
-            <span>
-              <i class="fas fa-smoking-ban"></i>
-              Proibido fumar 
-            </span> <br>
-            <span>
-              <i class="fas fa-mobile-alt"></i>
-              Proibido uso de celular
-            </span> <br>
-            <span>
-              <i class="fas fa-volume-up"></i>
-              Proibido qualquer tipo de som alto
-            </span> <br>
-            <span>
-              <i class="fas fa-video"></i>
-              Proibido a gravação do filme
-            </span>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" @click="shutModal()">
-              Fechar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
         </div>
         <div class="modal" :class="{ 'is-active': exposeModal }">
-      <div class="modal-background"></div>
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">
-              Deseja excluir essa anotação?
-            </h5>
-          </div>
-          <div class="modal-body">
-            <p>
-              Após formar uma família, Jake Sully e Ney'tiri fazem de tudo para ficarem juntos. No entanto, eles devem sair de casa e explorar as regiões de Pandora quando uma antiga ameaça ressurge, e Jake deve travar uma guerra difícil contra os humanos.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" @click="endModal()">
-              Fechar
-            </button>
+          <div class="modal-background"></div>
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  Deseja excluir essa anotação?
+                </h5>
+              </div>
+              <div class="modal-body">
+                <p>
+                  Após formar uma família, Jake Sully e Ney'tiri fazem de tudo para ficarem juntos. No entanto, eles
+                  devem sair de casa e explorar as regiões de Pandora quando uma antiga ameaça ressurge, e Jake deve
+                  travar uma guerra difícil contra os humanos.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" @click="endModal()">
+                  Fechar
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
       </div>
 
       <div class="card-3" v-show="currentCard === 2">
@@ -192,64 +195,67 @@
             <button @click="joinInfo()" class="fas fa-info" id="button2"></button>
           </div>
           <div class="modal" :class="{ 'is-active': illustrateModal }">
-      <div class="modal-background"></div>
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">
-              Regras da sala de cinema 
-            </h5>
+            <div class="modal-background"></div>
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">
+                    Regras da sala de cinema
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <span>
+                    <i class="fas fa-smoking-ban"></i>
+                    Proibido fumar
+                  </span> <br>
+                  <span>
+                    <i class="fas fa-mobile-alt"></i>
+                    Proibido uso de celular
+                  </span> <br>
+                  <span>
+                    <i class="fas fa-volume-up"></i>
+                    Proibido qualquer tipo de som alto
+                  </span> <br>
+                  <span>
+                    <i class="fas fa-video"></i>
+                    Proibido a gravação do filme
+                  </span>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" @click="blockedModal()">
+                    Fechar
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="modal-body">
-            <span>
-              <i class="fas fa-smoking-ban"></i>
-              Proibido fumar 
-            </span> <br>
-            <span>
-              <i class="fas fa-mobile-alt"></i>
-              Proibido uso de celular
-            </span> <br>
-            <span>
-              <i class="fas fa-volume-up"></i>
-              Proibido qualquer tipo de som alto
-            </span> <br>
-            <span>
-              <i class="fas fa-video"></i>
-              Proibido a gravação do filme
-            </span>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" @click="blockedModal()">
-              Fechar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
         </div>
       </div>
       <div class="modal" :class="{ 'is-active': displayModal }">
-      <div class="modal-background"></div>
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">
-              Deseja excluir essa anotação?
-            </h5>
-          </div>
-          <div class="modal-body">
-            <p class="modal-text">
-              Um homem deprimido que sofre de insônia conhece um estranho vendedor chamado Tyler Durden e se vê morando em uma casa suja depois que seu perfeito apartamento é destruído. A dupla forma um clube com regras rígidas onde homens lutam. A parceria perfeita é comprometida quando uma mulher, Marla, atrai a atenção de Tyler.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" @click="finishModal()">
-              Fechar
-            </button>
+        <div class="modal-background"></div>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">
+                Deseja excluir essa anotação?
+              </h5>
+            </div>
+            <div class="modal-body">
+              <p class="modal-text">
+                Um homem deprimido que sofre de insônia conhece um estranho vendedor chamado Tyler Durden e se vê
+                morando em uma casa suja depois que seu perfeito apartamento é destruído. A dupla forma um clube com
+                regras rígidas onde homens lutam. A parceria perfeita é comprometida quando uma mulher, Marla, atrai a
+                atenção de Tyler.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" @click="finishModal()">
+                Fechar
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
 
     <button class="next-arrow" @click="nextCard">
@@ -430,7 +436,7 @@ p {
   right: 10px;
   justify-content: center;
   border-radius: 100%;
-  margin: 0; 
+  margin: 0;
 }
 
 #button2 {
@@ -528,5 +534,4 @@ img {
   align-items: center;
   justify-content: center;
 }
-
 </style>
