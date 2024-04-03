@@ -73,7 +73,7 @@
                 </h5>
               </div>
               <div class="modal-body">
-                <p>
+                <p class="text">
                   Depois de se reunir com Gwen Stacy, Homem-Aranha é jogado no multiverso. Lá, o super-herói aracnídeo
                   encontra uma numerosa equipe encarregada de proteger sua própria existência.
                 </p>
@@ -156,7 +156,7 @@
                 </h5>
               </div>
               <div class="modal-body">
-                <p>
+                <p class="content">
                   Após formar uma família, Jake Sully e Ney'tiri fazem de tudo para ficarem juntos. No entanto, eles
                   devem sair de casa e explorar as regiões de Pandora quando uma antiga ameaça ressurge, e Jake deve
                   travar uma guerra difícil contra os humanos.
@@ -372,7 +372,7 @@ export default {
   border: none;
   padding: 10px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .carousel {
@@ -511,6 +511,14 @@ img {
   border-radius: 10px;
 }
 
+.text {
+  height: 90px;
+}
+
+.content {
+  height: 90px;
+}
+
 .modal-body {
   text-align: left;
 }
@@ -518,7 +526,7 @@ img {
 .modal-content {
   width: 100%;
   height: 100%;
-  border-radius: 9px;
+  border-radius: 10px;
   display: flex;
   margin: auto;
 }
@@ -533,5 +541,22 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .carousel-container {
+    width: 100%;
+  }
+
+  .btn-content {
+    margin-top: 100px;
+    margin-left: 165px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .carousel-container {
+    width: 80%;
+  }
 }
 </style>
